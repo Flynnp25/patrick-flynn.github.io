@@ -23,20 +23,23 @@ module.exports = __webpack_require__(/*! /Users/paddy/IdeaProjects/paddy-flynn-w
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortingVisualiserComponent", function() { return SortingVisualiserComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _array_bar_array_bar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../array-bar/array-bar.component */ "WGi4");
+/* harmony import */ var _algorithms_bubble_sort_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../algorithms/bubble-sort.service */ "86DC");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _array_bar_array_bar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../array-bar/array-bar.component */ "WGi4");
 
 
 
 
-function SortingVisualiserComponent_array_bar_22_Template(rf, ctx) { if (rf & 1) {
+
+function SortingVisualiserComponent_array_bar_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "array-bar", 16);
 } if (rf & 2) {
     const num_r1 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", num_r1);
 } }
 class SortingVisualiserComponent {
-    constructor() {
+    constructor(bubbleSortService) {
+        this.bubbleSortService = bubbleSortService;
         this.array = [];
     }
     ngOnInit() {
@@ -60,9 +63,12 @@ class SortingVisualiserComponent {
         const barWidthPlusMargin = 5 + 1 + 1;
         return (this.innerWidth * remainingScreenPercentAfterViewPortPadding) / barWidthPlusMargin;
     }
+    sort() {
+        this.bubbleSortService.sort(this.array);
+    }
 }
-SortingVisualiserComponent.ɵfac = function SortingVisualiserComponent_Factory(t) { return new (t || SortingVisualiserComponent)(); };
-SortingVisualiserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SortingVisualiserComponent, selectors: [["sorting-visualiser"]], decls: 23, vars: 1, consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "bg-light"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarSupportedContent", "aria-controls", "navbarSupportedContent", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto"], [1, "nav-item"], ["data-toggle", "collapse", "data-target", ".navbar-collapse.show", 1, "nav-link", "btn", "btn-light", 3, "click"], [1, "nav-item", "dropdown"], ["id", "navbarDropdown", "role", "button", "data-toggle", "dropdown", "aria-haspopup", "true", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle", "btn", "btn-light"], ["aria-labelledby", "navbarDropdown", 1, "dropdown-menu"], ["data-toggle", "collapse", "data-target", ".navbar-collapse.show", 1, "dropdown-item", "btn", "btn-light"], [1, "navbar-nav", "ml-auto"], [1, "nav-link"], ["data-toggle", "collapse", "data-target", ".navbar-collapse.show", 1, "nav-link", "btn", "btn-light"], [1, "visualiser"], ["class", "bar", 3, "value", 4, "ngFor", "ngForOf"], [1, "bar", 3, "value"]], template: function SortingVisualiserComponent_Template(rf, ctx) { if (rf & 1) {
+SortingVisualiserComponent.ɵfac = function SortingVisualiserComponent_Factory(t) { return new (t || SortingVisualiserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_algorithms_bubble_sort_service__WEBPACK_IMPORTED_MODULE_1__["BubbleSortService"])); };
+SortingVisualiserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SortingVisualiserComponent, selectors: [["sorting-visualiser"]], decls: 25, vars: 1, consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "bg-white"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarSupportedContent", "aria-controls", "navbarSupportedContent", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "custom-toggler", "navbar-toggler", "bg-white"], [1, "navbar-toggler-icon"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse", "bg-white"], [1, "navbar-nav", "mr-auto"], [1, "nav-item", "bg-white"], ["data-toggle", "collapse", "data-target", ".navbar-collapse.show", 1, "nav-link", "btn", "btn-light", "bg-white", "border-white", 3, "click"], [1, "nav-item", "dropdown"], ["id", "navbarDropdown", "role", "button", "data-toggle", "dropdown", "aria-haspopup", "true", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle", "btn", "btn-light", "bg-white", "border-white"], ["aria-labelledby", "navbarDropdown", 1, "dropdown-menu", "bg-white", "border-white"], ["data-toggle", "collapse", "data-target", ".navbar-collapse.show", 1, "dropdown-item", "btn", "btn-light", "bg-white", "border-white"], [1, "navbar-nav", "ml-auto"], [1, "nav-item"], [1, "nav-link"], [1, "visualiser"], ["class", "bar", 3, "value", 4, "ngFor", "ngForOf"], [1, "bar", 3, "value"]], template: function SortingVisualiserComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "span", 2);
@@ -83,36 +89,81 @@ SortingVisualiserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "button", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Bubble Sort ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "ul", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "li", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Selected Algorithms: Bubble Sort");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "li", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "button", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "Sort! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "button", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Merge Sort ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "ul", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "li", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Selected Algorithms: Bubble Sort");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "diV", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](22, SortingVisualiserComponent_array_bar_22_Template, 1, 1, "array-bar", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "li", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "button", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SortingVisualiserComponent_Template_button_click_21_listener() { return ctx.sort(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Sort! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "diV", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, SortingVisualiserComponent_array_bar_24_Template, 1, 1, "array-bar", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](24);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.array);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _array_bar_array_bar_component__WEBPACK_IMPORTED_MODULE_2__["ArrayBarComponent"]], styles: [".visualiser[_ngcontent-%COMP%] {\n  position: absolute;\n  padding-left: 9vw;\n  padding-right: 9vw;\n  padding-top: 1vh;\n}\n\n.bar[_ngcontent-%COMP%] {\n  width: 5px;\n  margin: 0 1px;\n  background: #1862c6;\n  display: inline-block;\n}\n\n.btn-light[_ngcontent-%COMP%] {\n  color: #6e84a3;\n}\n\n.dropdown-menu[_ngcontent-%COMP%] {\n  background: #f8f9fa !important;\n}\n\n.dropdown-item[_ngcontent-%COMP%] {\n  background: #f8f9fa !important;\n}\n\n.navbar-light[_ngcontent-%COMP%]   .navbar-nav[_ngcontent-%COMP%]   .nav-link[_ngcontent-%COMP%] {\n  color: #6e84a3;\n}\n\n.navbar-nav[_ngcontent-%COMP%]   .nav-item[_ngcontent-%COMP%]:not(:last-child) {\n  border-right: 1px solid silver;\n}\n\n@media (max-width: 768px) {\n  .navbar-nav[_ngcontent-%COMP%]   .nav-item[_ngcontent-%COMP%]:not(:last-child) {\n    border-right: none;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc29ydGluZy12aXN1YWxpc2VyL3NvcnRpbmctdmlzdWFsaXNlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxVQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EscUJBQUE7QUFDRjs7QUFFQTtFQUNFLGNBQUE7QUFDRjs7QUFFQTtFQUNFLDhCQUFBO0FBQ0Y7O0FBRUE7RUFDRSw4QkFBQTtBQUNGOztBQUVBO0VBQ0UsY0FBQTtBQUNGOztBQUVBO0VBQ0UsOEJBQUE7QUFDRjs7QUFFQTtFQUNFO0lBQ0Usa0JBQUE7RUFDRjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvc29ydGluZy12aXN1YWxpc2VyL3NvcnRpbmctdmlzdWFsaXNlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi52aXN1YWxpc2VyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBwYWRkaW5nLWxlZnQ6IDl2dztcbiAgcGFkZGluZy1yaWdodDogOXZ3O1xuICBwYWRkaW5nLXRvcDogMXZoO1xufVxuXG4uYmFyIHtcbiAgd2lkdGg6IDVweDtcbiAgbWFyZ2luOiAwIDFweDtcbiAgYmFja2dyb3VuZDogIzE4NjJjNjtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uYnRuLWxpZ2h0IHtcbiAgY29sb3I6ICM2ZTg0YTM7XG59XG5cbi5kcm9wZG93bi1tZW51IHtcbiAgYmFja2dyb3VuZDogI2Y4ZjlmYSAhaW1wb3J0YW50O1xufVxuXG4uZHJvcGRvd24taXRlbSB7XG4gIGJhY2tncm91bmQ6ICNmOGY5ZmEgIWltcG9ydGFudDtcbn1cblxuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbmsge1xuICBjb2xvcjogIzZlODRhMztcbn1cblxuLm5hdmJhci1uYXYgLm5hdi1pdGVtOm5vdCg6bGFzdC1jaGlsZCkge1xuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBzaWx2ZXI7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAubmF2YmFyLW5hdiAubmF2LWl0ZW06bm90KDpsYXN0LWNoaWxkKSB7XG4gICAgYm9yZGVyLXJpZ2h0OiBub25lO1xuICB9XG59XG4iXX0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _array_bar_array_bar_component__WEBPACK_IMPORTED_MODULE_3__["ArrayBarComponent"]], styles: [".visualiser[_ngcontent-%COMP%] {\n  position: absolute;\n  padding-left: 9vw;\n  padding-right: 9vw;\n  padding-top: 1vh;\n}\n\n.bar[_ngcontent-%COMP%] {\n  width: 5px;\n  margin: 0 1px;\n  background: #1862c6;\n  display: inline-block;\n}\n\n.btn-light[_ngcontent-%COMP%] {\n  color: #6e84a3;\n}\n\n.custom-toggler[_ngcontent-%COMP%]   .navbar-toggler-icon[_ngcontent-%COMP%] {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(24, 98, 198, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\");\n}\n\n.custom-toggler.navbar-toggler[_ngcontent-%COMP%] {\n  border-color: #1862c6;\n}\n\n.navbar-light[_ngcontent-%COMP%]   .navbar-nav[_ngcontent-%COMP%]   .nav-link[_ngcontent-%COMP%] {\n  color: #6e84a3;\n}\n\n.navbar-nav[_ngcontent-%COMP%]   .nav-item[_ngcontent-%COMP%]:not(:last-child) {\n  border-right: 1px solid silver;\n}\n\n@media (max-width: 768px) {\n  .navbar-nav[_ngcontent-%COMP%]   .nav-item[_ngcontent-%COMP%]:not(:last-child) {\n    border-right: none;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc29ydGluZy12aXN1YWxpc2VyL3NvcnRpbmctdmlzdWFsaXNlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxVQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EscUJBQUE7QUFDRjs7QUFFQTtFQUNFLGNBQUE7QUFDRjs7QUFFQTtFQUNFLG1SQUFBO0FBQ0Y7O0FBRUE7RUFDRSxxQkFBQTtBQUNGOztBQUVBO0VBQ0UsY0FBQTtBQUNGOztBQUVBO0VBQ0UsOEJBQUE7QUFDRjs7QUFFQTtFQUNFO0lBQ0Usa0JBQUE7RUFDRjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvc29ydGluZy12aXN1YWxpc2VyL3NvcnRpbmctdmlzdWFsaXNlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi52aXN1YWxpc2VyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBwYWRkaW5nLWxlZnQ6IDl2dztcbiAgcGFkZGluZy1yaWdodDogOXZ3O1xuICBwYWRkaW5nLXRvcDogMXZoO1xufVxuXG4uYmFyIHtcbiAgd2lkdGg6IDVweDtcbiAgbWFyZ2luOiAwIDFweDtcbiAgYmFja2dyb3VuZDogIzE4NjJjNjtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uYnRuLWxpZ2h0IHtcbiAgY29sb3I6ICM2ZTg0YTM7XG59XG5cbi5jdXN0b20tdG9nZ2xlciAubmF2YmFyLXRvZ2dsZXItaWNvbiB7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM2NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nMzAnIGhlaWdodD0nMzAnIHZpZXdCb3g9JzAgMCAzMCAzMCclM2UlM2NwYXRoIHN0cm9rZT0ncmdiYSgyNCwgOTgsIDE5OCwgMC41KScgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbWl0ZXJsaW1pdD0nMTAnIHN0cm9rZS13aWR0aD0nMicgZD0nTTQgN2gyMk00IDE1aDIyTTQgMjNoMjInLyUzZSUzYy9zdmclM2VcIik7XG59XG5cbi5jdXN0b20tdG9nZ2xlci5uYXZiYXItdG9nZ2xlciB7XG4gIGJvcmRlci1jb2xvcjogcmdiKDI0LCA5OCwgMTk4KTtcbn1cblxuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbmsge1xuICBjb2xvcjogIzZlODRhMztcbn1cblxuLm5hdmJhci1uYXYgLm5hdi1pdGVtOm5vdCg6bGFzdC1jaGlsZCkge1xuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBzaWx2ZXI7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAubmF2YmFyLW5hdiAubmF2LWl0ZW06bm90KDpsYXN0LWNoaWxkKSB7XG4gICAgYm9yZGVyLXJpZ2h0OiBub25lO1xuICB9XG59XG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SortingVisualiserComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
                 selector: 'sorting-visualiser',
                 templateUrl: './sorting-visualiser.component.html',
                 styleUrls: ['./sorting-visualiser.component.scss']
+            }]
+    }], function () { return [{ type: _algorithms_bubble_sort_service__WEBPACK_IMPORTED_MODULE_1__["BubbleSortService"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "86DC":
+/*!***************************************************!*\
+  !*** ./src/app/algorithms/bubble-sort.service.ts ***!
+  \***************************************************/
+/*! exports provided: BubbleSortService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BubbleSortService", function() { return BubbleSortService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class BubbleSortService {
+    constructor() {
+    }
+    sort(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    const temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+}
+BubbleSortService.ɵfac = function BubbleSortService_Factory(t) { return new (t || BubbleSortService)(); };
+BubbleSortService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: BubbleSortService, factory: BubbleSortService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BubbleSortService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
             }]
     }], function () { return []; }, null); })();
 
